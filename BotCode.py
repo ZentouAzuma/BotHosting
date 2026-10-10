@@ -3,6 +3,7 @@ from discord.ext import commands
 import logging
 from dotenv import load_dotenv
 import os
+import webserver
 
 load_dotenv()
 token = os.getenv("DISCORD_TOKEN")
@@ -101,7 +102,7 @@ async def gg(ctx, player: discord.Member, pvp_type: str, opponent: discord.Membe
 
     message_text = (
         f"gg {player.mention} {matched_type}\n"
-        f"Ranked Battle vs {opponent.mention} (and dudes)\n"
+        f"Ranked Battle vs {opponent.mention}\n"
         f"{score}\n\n"
         f"Previous elo:\n{previous_elo}\n"
         f"New elo: {new_elo}\n"
@@ -139,4 +140,5 @@ async def listroles(ctx):
 
 
 # --- Run the bot ---
+webserver.keep_alive()
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
