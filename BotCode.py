@@ -102,7 +102,7 @@ async def gg(ctx, player: discord.Member, pvp_type: str, opponent: discord.Membe
 
     message_text = (
         f"gg {player.mention} {matched_type}\n"
-        f"Ranked Battle vs {opponent.mention}\n"
+        f"Tester/Opponent {opponent.mention}\n"
         f"{score}\n\n"
         f"Previous elo:\n{previous_elo}\n"
         f"New elo: {new_elo}\n"
